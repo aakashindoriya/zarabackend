@@ -1,7 +1,7 @@
 const mongoose =require("mongoose");
 const userSchema=new mongoose.Schema({
     name:{
-        require:true,type:String
+        type:String
     },
     email:{
         type:String,required:true,unique:true
@@ -17,7 +17,7 @@ const userSchema=new mongoose.Schema({
     },
     DOB: {type:String, min: 20, max: 100},
     gender: {type:String, enum: ["Male", "Female"]},
-    mobile:{type:String,required:true}
+    mobile:{type:String}
 })
 const User=mongoose.model("user",userSchema)
 
